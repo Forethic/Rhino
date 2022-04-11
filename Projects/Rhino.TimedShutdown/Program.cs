@@ -24,7 +24,7 @@ namespace Rhino.TimedShutdown
                 // 设定定时器
                 var shutdownDateTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 0, 0, 0);
                 Task.Delay(shutdownDateTime - currentDateTime).ContinueWith((t) => { SystemUtil.PowerOff(); });
-                while (true) { Thread.Sleep(24 * 60 * 60 * 1000); }
+                while (true) { Thread.Sleep(60 * 1000); }
             }
         }
     }
