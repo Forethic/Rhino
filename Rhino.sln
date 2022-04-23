@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Mvvm", "Core\Rhino.Mv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.DuplicateCleaner", "Projects\Rhino.DuplicateCleaner\Rhino.DuplicateCleaner.csproj", "{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learn", "Learn", "{46CA5BB5-0BA9-4302-A5C7-E7437F82BC66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWPF", "Learn\ProWPF\ProWPF.csproj", "{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
 		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF} = {8C65393A-0385-4E09-B78E-26EF59AA25B6}
+		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607} = {46CA5BB5-0BA9-4302-A5C7-E7437F82BC66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {170A4055-B4E0-4E2F-BB58-BFE291B385B9}
