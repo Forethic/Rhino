@@ -95,11 +95,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Rhino.Mvvm\Rhino.Mvvm.csproj">
-      <Project>{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}</Project>
-      <Name>Rhino.Mvvm</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
