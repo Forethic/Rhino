@@ -55,7 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="StoreDatabase\Category.cs" />
+    <Compile Include="StoreDatabase\Product.cs" />
+    <Compile Include="StoreDatabase\StoreDb.cs" />
+    <Compile Include="StoreDatabase\StoreDbDataSet.cs" />
+    <Page Include="Ch21\FilterCollectionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ch21\GroupInRangesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ch21\GroupListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ch21\NavigateCollectionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +79,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Ch21\FilterCollectionWindow.xaml.cs">
+      <DependentUpon>FilterCollectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ch21\GroupInRangesWindow.xaml.cs">
+      <DependentUpon>GroupInRangesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch21\GroupListWindow.xaml.cs">
+      <DependentUpon>GroupListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch21\NavigateCollectionWindow.xaml.cs">
+      <DependentUpon>NavigateCollectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch21\PriceRangeProductGrouper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -90,9 +115,31 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="StoreDatabase\store.xsc">
+      <DependentUpon>store.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StoreDatabase\store.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StoreDatabase\store.xss">
+      <DependentUpon>store.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StoreDatabase\store.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Rhino.Mvvm\Rhino.Mvvm.csproj">
+      <Project>{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}</Project>
+      <Name>Rhino.Mvvm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

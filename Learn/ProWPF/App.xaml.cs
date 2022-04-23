@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ProWPF.StoreDatabase;
 using System.Windows;
 
 namespace ProWPF
@@ -13,5 +8,10 @@ namespace ProWPF
     /// </summary>
     public partial class App : Application
     {
+        private static StoreDb _storeDb = null;
+        public static StoreDb StoreDb => _storeDb ?? (_storeDb = new StoreDb());
+
+        private static StoreDbDataSet _storeDbDataSet = null;
+        public static StoreDbDataSet StoreDbDataSet => _storeDbDataSet ?? (_storeDbDataSet = new StoreDbDataSet());
     }
 }
