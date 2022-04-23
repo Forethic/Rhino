@@ -2,6 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ProWPF"
-             StartupUri="Ch21/GroupInRangesWindow.xaml">
+             xmlns:cvt="clr-namespace:ProWPF.Converters"
+             StartupUri="Ch22/ListView/CustomListViewTest.xaml">
 
+    <Application.Resources>
+        <cvt:ImagePathConverter x:Key="ImagePathConverter" />
+    </Application.Resources>
+    
 </Application>

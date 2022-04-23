@@ -55,6 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ch22\ListView\AdvancedListViewWindow.xaml.cs">
+      <DependentUpon>AdvancedListViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch22\ListView\BasicListViewWindow.xaml.cs">
+      <DependentUpon>BasicListViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch22\ListView\CustomListViewTest.xaml.cs">
+      <DependentUpon>CustomListViewTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch22\ListView\TileView.cs" />
+    <Compile Include="Converters\ImagePathConverter.cs" />
     <Compile Include="StoreDatabase\Category.cs" />
     <Compile Include="StoreDatabase\Product.cs" />
     <Compile Include="StoreDatabase\StoreDb.cs" />
@@ -92,6 +103,22 @@
       <DependentUpon>NavigateCollectionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ch21\PriceRangeProductGrouper.cs" />
+    <Page Include="Ch22\ListView\AdvancedListViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ch22\ListView\BasicListViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ch22\ListView\CustomListViewTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -140,6 +167,26 @@
       <Project>{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}</Project>
       <Name>Rhino.Mvvm</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\360.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\362.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\397.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\401.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\404.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\image.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
