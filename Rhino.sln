@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{3F01E67B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{22AFC0AC-D516-45CF-96DF-B715E7A13C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Mvvm", "Rhino.Mvvm\Rhino.Mvvm.csproj", "{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.TimedShutdown", "Projects\Rhino.TimedShutdown\Rhino.TimedShutdown.csproj", "{A5BB52BB-3188-425F-BDD1-B466611AFC98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Utils", "Core\Rhino.Utils\Rhino.Utils.csproj", "{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.DuplicateCleaner", "Rhino.DuplicateCleaner\Rhino.DuplicateCleaner.csproj", "{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Mvvm", "Core\Rhino.Mvvm\Rhino.Mvvm.csproj", "{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.DuplicateCleaner", "Projects\Rhino.DuplicateCleaner\Rhino.DuplicateCleaner.csproj", "{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5BB52BB-3188-425F-BDD1-B466611AFC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5BB52BB-3188-425F-BDD1-B466611AFC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BB52BB-3188-425F-BDD1-B466611AFC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,9 +44,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
 		{A5BB52BB-3188-425F-BDD1-B466611AFC98} = {8C65393A-0385-4E09-B78E-26EF59AA25B6}
 		{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
+		{EF81B6D7-7217-4C72-BAD7-19E86BCA678D} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF} = {8C65393A-0385-4E09-B78E-26EF59AA25B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
