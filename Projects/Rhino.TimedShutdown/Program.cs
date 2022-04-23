@@ -1,7 +1,6 @@
 ﻿using Rhino.Utils;
 using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Rhino.TimedShutdown
 {
@@ -21,9 +20,12 @@ namespace Rhino.TimedShutdown
             else
             {
                 var tomorrow = currentDateTime.AddDays(1);
-                // 设定定时器
                 var shutdownDateTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 0, 0, 0);
-                Task.Delay(shutdownDateTime - currentDateTime).ContinueWith((t) => { SystemUtil.PowerOff(); });
+                // 设定定时器
+                var timer = new System.Timers.Timer();
+                timer.Interval = (shutdownDateTime - currentDateTime).TotalMilliseconds;
+                timer.Elapsed += (s, e) => { SystemUtil.PowerOff(); };
+                timer.Start();
                 while (true) { Thread.Sleep(60 * 1000); }
             }
         }
