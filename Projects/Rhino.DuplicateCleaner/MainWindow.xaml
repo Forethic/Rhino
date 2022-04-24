@@ -3,10 +3,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Rhino.DuplicateCleaner.ViewModels"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Rhino.DuplicateCleaner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="640">
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <Button DockPanel.Dock="Left" Content="Path: " Command="{Binding SelectDirCommand}" IsEnabled="{Binding InComparing,Converter={StaticResource ReverseBoolConverter}}"/>
+            <Button DockPanel.Dock="Right" Content="Start!" Command="{Binding StartCompareCommand}" IsEnabled="{Binding CanCompare}"/>
+            <Border DockPanel.Dock="Bottom" CornerRadius="3" Margin="3 0" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock Text="{Binding SelectPath}" TextTrimming="CharacterEllipsis" />
+            </Border>
+        </DockPanel>
+
+        <ItemsControl Grid.Row="1" Margin="0 5 0 0" ItemsSource="{Binding Results}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:CompareResult}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding MD5}" />
+                        <ItemsControl ItemsSource="{Binding Files}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type vm:DeleteFile}">
+                                    <Button Content="{Binding FileName}" Background="{Binding Fill}">
+                                        <Button.InputBindings>
+                                            <MouseBinding Command="{Binding DeleteCommand }" Gesture="RightClick" />
+                                        </Button.InputBindings>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Grid Grid.Row="2">
+            <ProgressBar x:Name="progressBar"  Height="14" Value="{Binding CompareOfProgress}"/>
+            <TextBlock Visibility="{Binding InComparing,Converter={StaticResource BoolToVisibleConverter}}" Text="{Binding CompareOfProgress, StringFormat={}{0:0}%}"/>
+        </Grid>
 
     </Grid>
+
 </Window>

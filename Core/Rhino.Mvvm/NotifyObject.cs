@@ -17,17 +17,17 @@ namespace Rhino.Mvvm
         /// <typeparam name="T">object</typeparam>
         /// <param name="field">属性的对应字段</param>
         /// <param name="value">属性的新值</param>
-        /// <param name="updateBeforeAction">更新之前的操作</param>
-        /// <param name="updateAfterAction">更新之后的操作</param>
+        /// <param name="before">更新之前的操作</param>
+        /// <param name="after">更新之后的操作</param>
         /// <param name="propertyName">通知变化的属性名称</param>
-        protected void Update<T>(ref T field, T value, Action<T, T> updateBeforeAction = null, Action<T, T> updateAfterAction = null, [CallerMemberName] string propertyName = null)
+        protected void Update<T>(ref T field, T value, Action<T, T> before = null, Action<T, T> after = null, [CallerMemberName] string propertyName = null)
         {
-            updateBeforeAction?.Invoke(field, value);
+            before?.Invoke(field, value);
             if (!Equals(field, value))
             {
                 field = value;
             }
-            updateAfterAction?.Invoke(field, value);
+            after?.Invoke(field, value);
             RaisePropertyChanged(propertyName);
         }
 
@@ -37,14 +37,14 @@ namespace Rhino.Mvvm
         /// <typeparam name="T">object</typeparam>
         /// <param name="field">属性的对应字段</param>
         /// <param name="value">属性的新值</param>
-        /// <param name="updateBeforeAction">更新之前的操作</param>
-        /// <param name="updateAfterAction">更新之后的操作</param>
+        /// <param name="before">更新之前的操作</param>
+        /// <param name="after">更新之后的操作</param>
         /// <param name="propertyName">通知变化的属性名称</param>
-        protected void Coerce<T>(ref T field, T value, Action<T, T> updateBeforeAction = null, Action<T, T> updateAfterAction = null, [CallerMemberName] string propertyName = null)
+        protected void Coerce<T>(ref T field, T value, Action<T, T> before = null, Action<T, T> after = null, [CallerMemberName] string propertyName = null)
         {
-            updateBeforeAction?.Invoke(field, value);
+            before?.Invoke(field, value);
             field = value;
-            updateAfterAction?.Invoke(field, value);
+            after?.Invoke(field, value);
             RaisePropertyChanged(propertyName);
         }
 

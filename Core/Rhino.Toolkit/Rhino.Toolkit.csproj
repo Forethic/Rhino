@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5203EDC-B110-4918-9F4B-9D008ADC7BAF}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Rhino.DuplicateCleaner</RootNamespace>
-    <AssemblyName>Rhino.DuplicateCleaner</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ProjectGuid>{D38D1B03-FE37-49A4-A39F-97B49F9143F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Rhino.Toolkit</RootNamespace>
+    <AssemblyName>Rhino.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -34,10 +34,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -52,27 +54,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="ViewModels\CompareResult.cs" />
-    <Compile Include="ViewModels\DeleteFile.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\ReverseBoolConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,21 +79,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\Rhino.Mvvm\Rhino.Mvvm.csproj">
-      <Project>{ef81b6d7-7217-4c72-bad7-19e86bca678d}</Project>
-      <Name>Rhino.Mvvm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\Rhino.Toolkit\Rhino.Toolkit.csproj">
-      <Project>{d38d1b03-fe37-49a4-a39f-97b49f9143f3}</Project>
-      <Name>Rhino.Toolkit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\Rhino.Utils\Rhino.Utils.csproj">
-      <Project>{1ed2602b-7c9d-4b6f-af35-bde51ea27f2f}</Project>
-      <Name>Rhino.Utils</Name>
-    </ProjectReference>
+    <Page Include="Converter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Share.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MD5Util.cs" />
     <Compile Include="RegistryTableUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemUtil.cs" />
