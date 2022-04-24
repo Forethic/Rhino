@@ -97,7 +97,6 @@ namespace Rhino.DuplicateCleaner.ViewModels
             double i = 0;
             foreach (var file in Directory.GetFiles(dir))
             {
-                Thread.Sleep(100);
                 CompareResult.Add(file);
                 if (dir == SelectPath)
                 {

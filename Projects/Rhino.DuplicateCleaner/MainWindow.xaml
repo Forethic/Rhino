@@ -2,12 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:Rhino.DuplicateCleaner.ViewModels"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Rhino.DuplicateCleaner"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="640">
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:Rhino.DuplicateCleaner.ViewModels"
+        Title="MainWindow"
+        Width="640"
+        Height="450"
+        mc:Ignorable="d">
 
     <Window.DataContext>
         <vm:MainViewModel />
@@ -21,37 +23,85 @@
         </Grid.RowDefinitions>
 
         <DockPanel>
-            <Button DockPanel.Dock="Left" Content="Path: " Command="{Binding SelectDirCommand}" IsEnabled="{Binding InComparing,Converter={StaticResource ReverseBoolConverter}}"/>
-            <Button DockPanel.Dock="Right" Content="Start!" Command="{Binding StartCompareCommand}" IsEnabled="{Binding CanCompare}"/>
-            <Border DockPanel.Dock="Bottom" CornerRadius="3" Margin="3 0" BorderThickness="1" BorderBrush="Gray">
+            <Button Command="{Binding SelectDirCommand}"
+                    Content="Path: "
+                    DockPanel.Dock="Left"
+                    IsEnabled="{Binding InComparing, Converter={StaticResource ReverseBoolConverter}}" />
+            <Button Command="{Binding StartCompareCommand}"
+                    Content="Start!"
+                    DockPanel.Dock="Right"
+                    IsEnabled="{Binding CanCompare}" />
+            <Border Margin="3,0"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    DockPanel.Dock="Bottom">
                 <TextBlock Text="{Binding SelectPath}" TextTrimming="CharacterEllipsis" />
             </Border>
         </DockPanel>
 
-        <ItemsControl Grid.Row="1" Margin="0 5 0 0" ItemsSource="{Binding Results}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type vm:CompareResult}">
-                    <StackPanel>
-                        <TextBlock Text="{Binding MD5}" />
-                        <ItemsControl ItemsSource="{Binding Files}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate DataType="{x:Type vm:DeleteFile}">
-                                    <Button Content="{Binding FileName}" Background="{Binding Fill}">
-                                        <Button.InputBindings>
-                                            <MouseBinding Command="{Binding DeleteCommand }" Gesture="RightClick" />
-                                        </Button.InputBindings>
-                                    </Button>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <ScrollViewer Grid.Row="1"
+                      Margin="0,5,0,0"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Results}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:CompareResult}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding MD5}" />
+                            <StackPanel Orientation="Horizontal">
+
+                                <Border Visibility="{Binding IsImage,Converter={StaticResource BoolToVisibleConverter}}"
+                                        BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                                    <Image Width="120" Height="120"
+                                           VerticalAlignment="Center"
+                                           Source="{Binding Image}"/>
+                                </Border>
+
+                                <ItemsControl ItemsSource="{Binding Files}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type vm:DeleteFile}">
+                                            <Button Margin="3" Content="{Binding FileName}" Background="{Binding Fill}">
+                                                <Button.InputBindings>
+                                                    <MouseBinding Command="{Binding DeleteCommand}" Gesture="RightClick" />
+                                                </Button.InputBindings>
+
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="Button">
+                                                                    <Grid Margin="3">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="*" />
+                                                                            <ColumnDefinition Width="Auto" />
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Left" />
+                                                                        <Border Grid.Column="1" Width="8" Height="8" Background="{TemplateBinding Background}" 
+                                                                                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+                                                                    </Grid>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                    
+                                                </Button.Style>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
 
         <Grid Grid.Row="2">
-            <ProgressBar x:Name="progressBar"  Height="14" Value="{Binding CompareOfProgress}"/>
-            <TextBlock Visibility="{Binding InComparing,Converter={StaticResource BoolToVisibleConverter}}" Text="{Binding CompareOfProgress, StringFormat={}{0:0}%}"/>
+            <ProgressBar x:Name="progressBar"
+                         Height="14"
+                         Value="{Binding CompareOfProgress}" />
+            <TextBlock Text="{Binding CompareOfProgress, StringFormat={}{0:0}%}" Visibility="{Binding InComparing, Converter={StaticResource BoolToVisibleConverter}}" />
         </Grid>
 
     </Grid>

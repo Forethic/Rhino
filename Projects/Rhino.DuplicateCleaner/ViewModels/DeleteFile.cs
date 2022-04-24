@@ -59,6 +59,7 @@ namespace Rhino.DuplicateCleaner.ViewModels
             if (!CanDelete || Deleted) { return; }
 
             Deleted = true;
+
             if (File.Exists(FileName))
             {
                 File.Delete(FileName);

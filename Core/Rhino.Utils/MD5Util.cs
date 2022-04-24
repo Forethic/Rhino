@@ -27,7 +27,7 @@ namespace Rhino.Utils
 
         public static string GetMD5FromFile(this string fileName)
         {
-            return GetMD5FromStream(new FileStream(fileName, FileMode.Open));
+            return GetMD5FromStream(new FileStream(fileName, FileMode.Open, FileAccess.Read));
         }
 
         private static string Format(byte[] data)
