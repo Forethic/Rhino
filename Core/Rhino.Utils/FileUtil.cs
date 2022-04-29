@@ -4,13 +4,25 @@ namespace Rhino.Utils
 {
     public static class FileUtil
     {
-        private const string _imageExtensions = ".jpg;.png;.jpeg;.gif;.bmp;";
-
-        public static bool IsImage(this string fileName)
+        public static bool IsImage(this string file)
         {
-            if (string.IsNullOrEmpty(fileName)) { return false; }
+            if (string.IsNullOrEmpty(file)) { return false; }
 
-            return _imageExtensions.Contains(Path.GetExtension(fileName));
+            var extension = Path.GetExtension(file);
+            if (string.IsNullOrEmpty(extension)) { return false; }
+
+            extension = extension.ToLower();
+            switch (extension)
+            {
+                case ".jpg":
+                case ".jpeg":
+                case ".png":
+                case ".gif":
+                case ".bmp":
+                    return true;
+            }
+
+            return false;
         }
     }
 }
