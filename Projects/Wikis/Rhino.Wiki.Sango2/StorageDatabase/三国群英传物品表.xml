@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Goods>
+  <Books>
+    <Book Name="孙子兵法" Point="20" Target="智力" />
+    <Book Name="兵书24篇" Point="17" Target="智力" />
+    <Book Name="孟德新书" Point="13" Target="智力" />
+    <Book Name="史记" Point="10" Target="智力" />
+    <Book Name="春秋左传" Point="7" Target="智力" />
+    <Book Name="遁甲天书" Point="30" Target="技力最大值" />
+    <Book Name="青囊书" Point="25" Target="体力最大值" />
+    <Book Name="太平要术" Point="20" Target="技力最大值" />
+  </Books>
+  <Jewels>
+    <Jewel Name="珠宝" Point="12" />
+    <Jewel Name="黄金" Point="10" />
+    <Jewel Name="美女" Point="8" />
+    <Jewel Name="玉器" Point="6" />
+    <Jewel Name="布匹" Point="4" />
+  </Jewels>
+  <Horses>
+    <Horse Name="黄鬃马" Point="1" />
+    <Horse Name="褐鬃马" Point="2" LevelRequried="10" />
+    <Horse Name="黑鬃马" Point="3" LevelRequried="20" />
+    <Horse Name="大宛马" Point="4" LevelRequried="30" />
+    <Horse Name="铁骑马" Point="5" LevelRequried="40" />
+    <Horse Name="的卢" Point="5" LevelRequried="40" UnableToReturnIsNotValid="true" />
+    <Horse Name="爪黄飞电" Point="5" LevelRequried="40" UnableToReturnIsNotValid="true" />
+    <Horse Name="赤兔马" Point="6" LevelRequried="40" UnableToReturnIsNotValid="true" />
+  </Horses>
+  <Weapons>
+    <Weapon Name="直剑" Point="1" />
+    <Weapon Name="短锥枪" Point="2" />
+    <Weapon Name="铜殳" Point="2" />
+    <Weapon Name="眉尖刀" Point="3" />
+    <Weapon Name="吴钩" Point="4" LevelRequried="5" />
+    <Weapon Name="钩鎌枪" Point="5" LevelRequried="7" />
+    <Weapon Name="蛇矛" Point="6" LevelRequried="8" />
+    <Weapon Name="凤嘴刀" Point="7" LevelRequried="10" />
+    <Weapon Name="马叉" Point="8" LevelRequried="12" />
+    <Weapon Name="青铜剑" Point="10" LevelRequried="15" />
+    <Weapon Name="大斧" Point="11" LevelRequried="17" />
+    <Weapon Name="铜长刀" Point="12" LevelRequried="18" />
+    <Weapon Name="流星鎚" Point="13" LevelRequried="20" />
+    <Weapon Name="铩" Point="14" LevelRequried="21" />
+    <Weapon Name="铁钺戟" Point="15" LevelRequried="23" />
+    <Weapon Name="狼牙棒" Point="16" LevelRequried="24" />
+    <Weapon Name="弧月刀" Point="18" LevelRequried="27" />
+    <Weapon Name="月牙戟" Point="19" LevelRequried="29" />
+    <Weapon Name="三尖刀" Point="20" LevelRequried="30" />
+    <Weapon Name="两刃斧" Point="21" LevelRequried="32" />
+    <Weapon Name="铁蒺藜骨朵" Point="22" LevelRequried="27" />
+    <Weapon Name="双股剑" Point="23" LevelRequried="29" />
+    <Weapon Name="龙渊剑" Point="24" LevelRequried="36" />
+    <Weapon Name="双铁戟" Point="24" LevelRequried="30" />
+    <Weapon Name="青釭剑" Point="25" LevelRequried="32" />
+    <Weapon Name="古锭刀" Point="25" LevelRequried="32" />
+    <Weapon Name="紫龙戟" Point="25" LevelRequried="38" />
+    <Weapon Name="铁脊蛇矛" Point="26" LevelRequried="39" />
+    <Weapon Name="七星剑" Point="26" LevelRequried="33" />
+    <Weapon Name="青龙刀" Point="26" LevelRequried="39" />
+    <Weapon Name="倚天剑" Point="29" LevelRequried="44" />
+    <Weapon Name="方天画戟" Point="30" LevelRequried="45" />
+    <Weapon Name="丈八蛇矛" Point="30" LevelRequried="45" />
+    <Weapon Name="青龙偃月刀" Point="30" LevelRequried="45" />
+  </Weapons>
+</Goods>
