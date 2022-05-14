@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{8C65393A-0385-4E09-B78E-26EF59AA25B6}"
 EndProject
@@ -22,6 +22,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProWPF", "Learn\ProWPF\ProWPF.csproj", "{0F8BE8AF-F395-40C2-917C-BAC57CBF4607}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Toolkit", "Core\Rhino.Toolkit\Rhino.Toolkit.csproj", "{D38D1B03-FE37-49A4-A39F-97B49F9143F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhino.Wiki.Sango2", "Projects\Wikis\Rhino.Wiki.Sango2\Rhino.Wiki.Sango2.csproj", "{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wikis", "Wikis", "{66D51061-DC99-40E8-9D65-C7825ECA45FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{D38D1B03-FE37-49A4-A39F-97B49F9143F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D38D1B03-FE37-49A4-A39F-97B49F9143F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38D1B03-FE37-49A4-A39F-97B49F9143F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,8 @@ Global
 		{C5203EDC-B110-4918-9F4B-9D008ADC7BAF} = {8C65393A-0385-4E09-B78E-26EF59AA25B6}
 		{0F8BE8AF-F395-40C2-917C-BAC57CBF4607} = {46CA5BB5-0BA9-4302-A5C7-E7437F82BC66}
 		{D38D1B03-FE37-49A4-A39F-97B49F9143F3} = {22AFC0AC-D516-45CF-96DF-B715E7A13C4F}
+		{4B913E5A-432B-4808-B5AD-2EE9DF3B7BB5} = {66D51061-DC99-40E8-9D65-C7825ECA45FD}
+		{66D51061-DC99-40E8-9D65-C7825ECA45FD} = {8C65393A-0385-4E09-B78E-26EF59AA25B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {170A4055-B4E0-4E2F-BB58-BFE291B385B9}
