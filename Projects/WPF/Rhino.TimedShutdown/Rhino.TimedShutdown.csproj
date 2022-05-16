@@ -53,7 +53,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Rhino.Utils\Rhino.Utils.csproj">
+    <ProjectReference Include="..\..\..\Core\Rhino.Utils\Rhino.Utils.csproj">
       <Project>{1ED2602B-7C9D-4B6F-AF35-BDE51EA27F2F}</Project>
       <Name>Rhino.Utils</Name>
     </ProjectReference>

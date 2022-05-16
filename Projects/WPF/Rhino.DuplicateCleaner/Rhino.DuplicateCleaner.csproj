@@ -99,15 +99,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Rhino.Mvvm\Rhino.Mvvm.csproj">
+    <ProjectReference Include="..\..\..\Core\Rhino.Mvvm\Rhino.Mvvm.csproj">
       <Project>{ef81b6d7-7217-4c72-bad7-19e86bca678d}</Project>
       <Name>Rhino.Mvvm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\Rhino.Toolkit\Rhino.Toolkit.csproj">
+    <ProjectReference Include="..\..\..\Core\Rhino.Toolkit\Rhino.Toolkit.csproj">
       <Project>{d38d1b03-fe37-49a4-a39f-97b49f9143f3}</Project>
       <Name>Rhino.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\Rhino.Utils\Rhino.Utils.csproj">
+    <ProjectReference Include="..\..\..\Core\Rhino.Utils\Rhino.Utils.csproj">
       <Project>{1ed2602b-7c9d-4b6f-af35-bde51ea27f2f}</Project>
       <Name>Rhino.Utils</Name>
     </ProjectReference>
