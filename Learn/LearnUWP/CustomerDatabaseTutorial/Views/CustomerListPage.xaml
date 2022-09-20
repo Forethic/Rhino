@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="CustomerDatabaseTutorial.Views.CustomerListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomerDatabaseTutorial.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
+    mc:Ignorable="d"
+    NavigationCacheMode="Required">
+
+    <Grid
+        x:Name="CustomerListRoot"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel>
+            <CommandBar
+                x:Name="mainCommandBar"
+                HorizontalAlignment="Stretch"
+                IsEnabled="{x:Bind ViewModel.EnableCommandBar, Mode=OneWay}"
+                Background="AliceBlue">
+                <AppBarButton
+                    Click="{x:Bind ViewModel.CreateNewCustomerAsync}"
+                    Icon="Add"
+                    Label="New"
+                    ToolTipService.ToolTip="New customer"/>
+                <AppBarButton
+                    Click="{x:Bind ViewModel.DeleteAndUpdateAsync}"
+                    Icon="Delete"
+                    Label="Delete"
+                    ToolTipService.ToolTip="Delete customer" />
+                <AppBarButton
+                    Click="{x:Bind ViewModel.UpdateCustomersAsync}"
+                    Icon="Refresh"
+                    Label="Update"
+                    ToolTipService.ToolTip="Update to server" />
+            </CommandBar>
+            <StackPanel
+                x:Name="newCustomerPanel"
+                Orientation="Horizontal"
+                x:Load="{x:Bind ViewModel.AddingNewCustomer, Mode=OneWay}"
+                RelativePanel.Below="mainCommandBar">
+                <TextBox
+                    Header="First name"
+                    PlaceholderText="First"
+                    Margin="8,8,16,8"
+                    MinWidth="120"
+                    Text="{x:Bind ViewModel.NewCustomer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox
+                    Header="Last name"
+                    PlaceholderText="Last"
+                    Margin="0,8,16,8"
+                    MinWidth="120"
+                    Text="{x:Bind ViewModel.NewCustomer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox
+                    Header="Address"
+                    PlaceholderText="1234 Address St, Redmond WA 00000"
+                    Margin="0,8,16,8"
+                    MinWidth="280"
+                    Text="{x:Bind ViewModel.NewCustomer.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox
+                    Header="Company"
+                    PlaceholderText="Company"
+                    Margin="0,8,16,8"
+                    MinWidth="120"
+                    Text="{x:Bind ViewModel.NewCustomer.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <AppBarButton
+                    x:Name="DeleteNewCustomer"
+                    Click="{x:Bind ViewModel.DeleteNewCustomerAsync}"
+                    Icon="Cancel"/>
+                <AppBarButton
+                    x:Name="SaveNewCustomer"
+                    Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
+                    Icon="Save"/>
+            </StackPanel>
+            <telerikGrid:RadDataGrid
+                x:Name="DataGrid"
+                BorderThickness="0"
+                ColumnDataOperationsMode="Flyout"
+                GridLinesVisibility="None"
+                GroupPanelPosition="Left"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="newCustomerPanel"
+                ItemsSource="{x:Bind ViewModel.Customers}"
+                UserEditMode="Inline"
+                SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}"/>
+
+        </RelativePanel>
+
+    </Grid>
+</Page>
