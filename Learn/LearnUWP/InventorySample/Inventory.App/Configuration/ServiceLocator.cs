@@ -31,6 +31,7 @@ namespace Inventory
             serviceCollection.AddTransient<ShellViewModel>();
             serviceCollection.AddTransient<MainShellViewModel>();
             serviceCollection.AddTransient<DashboardViewModel>();
+            serviceCollection.AddTransient<SettingsViewModel>();
 
             _rootServiceProvider = serviceCollection.BuildServiceProvider();
         }

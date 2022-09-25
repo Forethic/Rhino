@@ -53,5 +53,17 @@ namespace Inventory.Views
                 e.Handled = true;
             }
         }
+
+        private void OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.SelectedItem is NavigationItem item)
+            {
+                ViewModel.NavigateTo(item.ViewModel);
+            }
+            else if (args.IsSettingsSelected)
+            {
+                ViewModel.NavigateTo(typeof(SettingsViewModel));
+            }
+        }
     }
 }

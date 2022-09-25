@@ -136,6 +136,8 @@
     <Compile Include="ViewModels\Base\ModelBase.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewState.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewState.cs" />
     <Compile Include="ViewModels\Shell\NavigationItem.cs" />
     <Compile Include="ViewModels\Shell\MainShellViewModel.cs" />
     <Compile Include="ViewModels\Shell\ShellViewModel.cs" />
@@ -144,6 +146,9 @@
     <Compile Include="ViewModels\Base\ViewStateBase.cs" />
     <Compile Include="Views\Dashboard\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shell\MainShellView.xaml.cs">
       <DependentUpon>MainShellView.xaml</DependentUpon>
@@ -189,6 +194,10 @@
     <Page Include="Views\Dashboard\DashboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Shell\MainShellView.xaml">
       <Generator>MSBuild:Compile</Generator>

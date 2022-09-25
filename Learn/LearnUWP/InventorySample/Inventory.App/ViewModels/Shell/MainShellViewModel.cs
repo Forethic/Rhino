@@ -1,4 +1,5 @@
 ﻿using Inventory.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,6 +40,19 @@ namespace Inventory.ViewModels
         {
             Items = GetItems().ToArray();
             return base.LoadAsync(viewState);
+        }
+
+        public void NavigateTo(Type viewModel)
+        {
+            switch (viewModel.Name)
+            {
+                case "DashboardViewModel":
+                    NavigationService.Navigate(viewModel, new DashboardViewState());
+                    break;
+                case "SettingsViewModel":
+                    NavigationService.Navigate(viewModel, new SettingsViewState());
+                    break;
+            }
         }
 
         private IEnumerable<NavigationItem> GetItems()
