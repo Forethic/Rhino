@@ -4,9 +4,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Inventory.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:vm="using:Inventory.ViewModels"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    >
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Name="NavigationViewItem" x:DataType="vm:NavigationItem">
+            <Grid Height="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <FontIcon Glyph="{x:Bind Glyph}" HorizontalAlignment="Left" FontSize="16" />
+                <TextBlock Grid.Column="1" Text="{x:Bind Label}" VerticalAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -16,6 +30,7 @@
 
         <NavigationView x:Name="navigationView"
                         MenuItemsSource="{x:Bind ViewModel.Items}"
+                        MenuItemTemplate="{StaticResource NavigationViewItem}"
                         IsPaneOpen="{x:Bind ViewModel.IsPaneOpen, Mode=TwoWay}"
                         AlwaysShowHeader="False"
                         SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=TwoWay}"
