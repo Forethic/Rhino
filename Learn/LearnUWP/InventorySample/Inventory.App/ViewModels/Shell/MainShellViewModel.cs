@@ -46,10 +46,10 @@ namespace Inventory.ViewModels
         {
             switch (viewModel.Name)
             {
-                case "DashboardViewModel":
+                case nameof(DashboardViewModel):
                     NavigationService.Navigate(viewModel, new DashboardViewState());
                     break;
-                case "SettingsViewModel":
+                case nameof(SettingsViewModel):
                     NavigationService.Navigate(viewModel, new SettingsViewState());
                     break;
             }

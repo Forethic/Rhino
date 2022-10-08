@@ -7,6 +7,10 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/DataGrid.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
             <cvt:BoolNegationConverter x:Key="BoolNegationConverter"/>
 
             <cvt:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" TrueValue="Visible" FalseValue="Collapsed"/>

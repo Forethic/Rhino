@@ -26,5 +26,10 @@ namespace Inventory.Views
         {
             this.InitializeComponent();
         }
+
+        private void OnItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
