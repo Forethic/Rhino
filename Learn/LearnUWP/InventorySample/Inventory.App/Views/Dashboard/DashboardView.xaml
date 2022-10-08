@@ -41,7 +41,7 @@
                 <views:CustomerPane Margin="12" Tag="Customers"/>
             </GridViewItem>
             <GridViewItem>
-                <TextBlock Text="Products" Margin="12"/>
+                <views:ProductsPane Margin="12" Tag="Products"/>
             </GridViewItem>
             <GridViewItem>
                 <TextBlock Text="Orders" Margin="12"/>
