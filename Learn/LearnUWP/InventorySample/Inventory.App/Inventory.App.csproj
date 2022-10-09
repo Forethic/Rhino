@@ -130,6 +130,7 @@
     <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Converters\LongConverter.cs" />
     <Compile Include="Converters\ShortConverter.cs" />
+    <Compile Include="Extensions\PageExtensions.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
@@ -137,8 +138,14 @@
     <Compile Include="Services\NavigationService\NavigationService.cs" />
     <Compile Include="Services\NavigationService\INavigationService.cs" />
     <Compile Include="ViewModels\Base\ModelBase.cs" />
+    <Compile Include="ViewModels\Customers\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\Customers\ViewState\CustomersViewState.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewState.cs" />
+    <Compile Include="ViewModels\Orders\OrdersViewModel.cs" />
+    <Compile Include="ViewModels\Orders\ViewState\OrdersViewState.cs" />
+    <Compile Include="ViewModels\Products\ProductsViewModel.cs" />
+    <Compile Include="ViewModels\Products\ViewState\ProductsViewState.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewState.cs" />
     <Compile Include="ViewModels\Shell\NavigationItem.cs" />
@@ -147,6 +154,9 @@
     <Compile Include="ViewModels\Shell\ShellViewState.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\Base\ViewStateBase.cs" />
+    <Compile Include="Views\Customers\CustomersView.xaml.cs">
+      <DependentUpon>CustomersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
@@ -161,6 +171,12 @@
     </Compile>
     <Compile Include="Views\Dashboard\Parts\ProductsPane.xaml.cs">
       <DependentUpon>ProductsPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\OrdersView.xaml.cs">
+      <DependentUpon>OrdersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Products\ProductsView.xaml.cs">
+      <DependentUpon>ProductsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -211,6 +227,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Customers\CustomersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Dashboard\DashboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,6 +248,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\Parts\ProductsPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\OrdersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Products\ProductsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

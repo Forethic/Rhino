@@ -35,6 +35,8 @@
 
         <GridView Grid.Row="2" Margin="6"
                   ItemContainerStyle="{StaticResource GridItemStyle}"
+                  IsItemClickEnabled="True"
+                  ItemClick="OnItemClick"
                   SelectionMode="None">
             <GridViewItem>
                 <views:CustomersPane Margin="12" Tag="Customers"/>

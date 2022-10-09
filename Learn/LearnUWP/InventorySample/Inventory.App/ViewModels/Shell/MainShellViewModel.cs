@@ -9,6 +9,9 @@ namespace Inventory.ViewModels
     public class MainShellViewModel : ShellViewModel
     {
         private readonly NavigationItem DashboardItem = new NavigationItem(0xE80F, "Dashboard", typeof(DashboardViewModel));
+        private readonly NavigationItem CustomersItem = new NavigationItem(0xE716, "Customers", typeof(CustomersViewModel));
+        private readonly NavigationItem OrdersItem = new NavigationItem(0xE14C, "Orders", typeof(OrdersViewModel));
+        private readonly NavigationItem ProductsItem = new NavigationItem(0xECAA, "Products", typeof(ProductsViewModel));
 
         public IEnumerable<NavigationItem> Items
         {
@@ -49,6 +52,15 @@ namespace Inventory.ViewModels
                 case nameof(DashboardViewModel):
                     NavigationService.Navigate(viewModel, new DashboardViewState());
                     break;
+                case nameof(CustomersViewModel):
+                    NavigationService.Navigate(viewModel, new CustomersViewState());
+                    break;
+                case nameof(OrdersViewModel):
+                    NavigationService.Navigate(viewModel, new OrdersViewState());
+                    break;
+                case nameof(ProductsViewModel):
+                    NavigationService.Navigate(viewModel, new ProductsViewState());
+                    break;
                 case nameof(SettingsViewModel):
                     NavigationService.Navigate(viewModel, new SettingsViewState());
                     break;
@@ -58,6 +70,9 @@ namespace Inventory.ViewModels
         private IEnumerable<NavigationItem> GetItems()
         {
             yield return DashboardItem;
+            yield return CustomersItem;
+            yield return OrdersItem;
+            yield return ProductsItem;
         }
     }
 }

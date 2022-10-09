@@ -1,6 +1,7 @@
 ﻿using Inventory.Services;
 using Inventory.ViewModels;
 using System;
+using System.Linq;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -32,7 +33,24 @@ namespace Inventory.Views
         {
             _navigationService = ServiceLocator.Current.GetService<INavigationService>();
             _navigationService.Initialize(frame);
+            frame.Navigated += OnFrameNavigated;
             CurrentView.BackRequested += OnBackRequested;
+        }
+
+        private void OnFrameNavigated(object sender, NavigationEventArgs e)
+        {
+            var targetType = NavigationService.GetViewModel(e.SourcePageType);
+            switch (targetType.Name)
+            {
+                case nameof(SettingsViewModel):
+                    ViewModel.SelectedItem = navigationView.SettingsItem;
+                    break;
+                default:
+                    ViewModel.SelectedItem = ViewModel.Items.First(r => r.ViewModel == targetType);
+                    break;
+            }
+            CurrentView.AppViewBackButtonVisibility = _navigationService.CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)

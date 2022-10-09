@@ -1,11 +1,10 @@
 ﻿<Page
     x:Class="Inventory.Views.MainShellView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Inventory.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:vm="using:Inventory.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Inventory.ViewModels"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -29,6 +28,7 @@
         </Grid.RowDefinitions>
 
         <NavigationView x:Name="navigationView"
+                        IsBackButtonVisible="Collapsed"
                         MenuItemsSource="{x:Bind ViewModel.Items}"
                         MenuItemTemplate="{StaticResource NavigationViewItem}"
                         IsPaneOpen="{x:Bind ViewModel.IsPaneOpen, Mode=TwoWay}"

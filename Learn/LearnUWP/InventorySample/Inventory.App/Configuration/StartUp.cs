@@ -21,7 +21,13 @@ namespace Inventory
         {
             NavigationService.Register<ShellViewModel, ShellView>();
             NavigationService.Register<MainShellViewModel, MainShellView>();
+
             NavigationService.Register<DashboardViewModel, DashboardView>();
+
+            NavigationService.Register<CustomersViewModel, CustomersView>();
+            NavigationService.Register<OrdersViewModel, OrdersView>();
+            NavigationService.Register<ProductsViewModel, ProductsView>();
+
             NavigationService.Register<SettingsViewModel, SettingsView>();
         }
     }
