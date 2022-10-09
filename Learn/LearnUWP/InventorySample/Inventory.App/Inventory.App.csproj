@@ -131,6 +131,7 @@
     <Compile Include="Converters\LongConverter.cs" />
     <Compile Include="Converters\ShortConverter.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NavigationService\NavigationService.cs" />
@@ -151,6 +152,9 @@
     </Compile>
     <Compile Include="Views\Dashboard\Parts\CustomerPane.xaml.cs">
       <DependentUpon>CustomerPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Parts\OrdersPane.xaml.cs">
+      <DependentUpon>OrdersPane.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\Parts\ProductsPane.xaml.cs">
       <DependentUpon>ProductsPane.xaml</DependentUpon>
@@ -210,6 +214,10 @@
     <Page Include="Views\Dashboard\Parts\CustomerPane.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dashboard\Parts\OrdersPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\Parts\ProductsPane.xaml">
       <SubType>Designer</SubType>
