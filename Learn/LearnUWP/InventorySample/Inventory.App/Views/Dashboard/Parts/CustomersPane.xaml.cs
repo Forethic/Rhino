@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace Inventory.Views
 {
-    public sealed partial class CustomerPane : UserControl
+    public sealed partial class CustomersPane : UserControl
     {
         public IList<CustomerModel> ItemsSource
         {
@@ -14,9 +14,9 @@ namespace Inventory.Views
         }
 
         public static readonly DependencyProperty ItemsSourceProperty
-            = DependencyProperty.Register(nameof(ItemsSource), typeof(IList<CustomerModel>), typeof(CustomerPane), new PropertyMetadata(null));
+            = DependencyProperty.Register(nameof(ItemsSource), typeof(IList<CustomerModel>), typeof(CustomersPane), new PropertyMetadata(null));
 
-        public CustomerPane()
+        public CustomersPane()
         {
             InitializeComponent();
 

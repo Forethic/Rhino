@@ -38,7 +38,7 @@
                   ItemContainerStyle="{StaticResource GridItemStyle}"
                   SelectionMode="None">
             <GridViewItem>
-                <views:CustomerPane Margin="12" Tag="Customers"/>
+                <views:CustomersPane Margin="12" Tag="Customers"/>
             </GridViewItem>
             <GridViewItem>
                 <views:ProductsPane Margin="12" Tag="Products"/>

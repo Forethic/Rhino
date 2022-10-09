@@ -150,8 +150,8 @@
     <Compile Include="Views\Dashboard\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Parts\CustomerPane.xaml.cs">
-      <DependentUpon>CustomerPane.xaml</DependentUpon>
+    <Compile Include="Views\Dashboard\Parts\CustomersPane.xaml.cs">
+      <DependentUpon>CustomersPane.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\Parts\OrdersPane.xaml.cs">
       <DependentUpon>OrdersPane.xaml</DependentUpon>
@@ -211,7 +211,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dashboard\Parts\CustomerPane.xaml">
+    <Page Include="Views\Dashboard\Parts\CustomersPane.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
