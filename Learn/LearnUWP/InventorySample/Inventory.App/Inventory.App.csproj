@@ -119,7 +119,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\ThreadSafeSingleton.cs" />
     <Compile Include="Configuration\ServiceLocator.cs" />
     <Compile Include="Configuration\StartUp.cs" />
     <Compile Include="Converters\BoolNegationConverter.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Converters\LongConverter.cs" />
     <Compile Include="Converters\ShortConverter.cs" />
-    <Compile Include="DataProviders\DataHelper.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
