@@ -150,6 +150,9 @@
     <Compile Include="Views\Dashboard\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\Parts\ChartsPane.xaml.cs">
+      <DependentUpon>ChartsPane.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\Parts\CustomersPane.xaml.cs">
       <DependentUpon>CustomersPane.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="html\ChartHtmlControl.html" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -208,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\DashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\Parts\ChartsPane.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
