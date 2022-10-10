@@ -30,7 +30,13 @@ namespace Inventory
 
             serviceCollection.AddTransient<ShellViewModel>();
             serviceCollection.AddTransient<MainShellViewModel>();
+
             serviceCollection.AddTransient<DashboardViewModel>();
+
+            serviceCollection.AddTransient<CustomersViewModel>();
+            serviceCollection.AddTransient<OrdersViewModel>();
+            serviceCollection.AddTransient<ProductsViewModel>();
+
             serviceCollection.AddTransient<SettingsViewModel>();
 
             _rootServiceProvider = serviceCollection.BuildServiceProvider();
@@ -44,8 +50,11 @@ namespace Inventory
         }
 
         public T GetService<T>() => GetService<T>(true);
+
         public T GetService<T>(bool isRequired)
-            => isRequired ? _serviceScope.ServiceProvider.GetRequiredService<T>() : _serviceScope.ServiceProvider.GetService<T>();
+            => isRequired ?
+               _serviceScope.ServiceProvider.GetRequiredService<T>() :
+               _serviceScope.ServiceProvider.GetService<T>();
 
         public void Dispose()
         {
